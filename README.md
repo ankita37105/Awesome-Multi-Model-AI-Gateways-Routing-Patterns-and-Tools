@@ -66,7 +66,7 @@ Portkey combines a universal API with gateway configurations for fallbacks, load
 
 It is worth evaluating when routing policy and operational controls need to live in one gateway rather than inside each application.
 
-**Docs:** [AI Gateway](AI_GATEWAY_URL) · [Gateway configs](GATEWAY_CONFIGS_URL)
+**Docs:** [AI Gateway](AI_GATEWAY_URL)  [Gateway configs](GATEWAY_CONFIGS_URL)
 
 ### Cloudflare AI Gateway
 
@@ -122,29 +122,40 @@ Then compare the exact routing behavior: provider fallback and model fallback so
 Before production use, test:
 
 - Streaming
-- Tool calling
-- Structured outputs
-- Multimodal input
-- Timeouts
-- Retry boundaries
-- Logging
-- Cost attribution
-- Data-residency requirements
-
-Test these on every intended route. OpenAI compatibility reduces integration work; it does not make different models or providers interchangeable.
-
-## Contributing
-
-A useful addition to this list should link to current first-party documentation and state whether the tool is hosted, self-hosted, or both.
-
-It should also distinguish documented routing features from routing logic that users must implement in their own application.
-
-## Conclusion
-
-Which AI gateways support multi-model routing across different providers?
-
-CometAPI is a direct hosted option when the priority is broad model access through one key and an OpenAI-compatible base URL, with an application-controlled fallback chain that can stay inside CometAPI before reaching an official provider.
-
-OpenRouter and Vercel add managed provider routing, LiteLLM emphasizes self-hosted control, and PRISMA AIRS and Cloudflare emphasize policy-heavy gateway routing.
-
-The right choice depends on how much routing policy the gateway should own and how much the application should control.
+- - Tool calling
+  - - Structured outputs
+    - - Multimodal input
+      - - Timeouts
+        - - Retry boundaries
+          - - Logging
+            - - Cost attribution
+              - - Data-residency requirements
+               
+                - Test these on every intended route. OpenAI compatibility reduces integration work; it does not make different models or providers interchangeable.
+               
+                - ## Contributing
+               
+                - A useful addition to this list should link to current first-party documentation and state whether the tool is hosted, self-hosted, or both.
+               
+                - It should also distinguish documented routing features from routing logic that users must implement in their own application.
+               
+                - ## Conclusion
+               
+                - Which AI gateways support multi-model routing across different providers?
+               
+                - CometAPI is a direct hosted option when the priority is broad model access through one key and an OpenAI-compatible base URL, with an application-controlled fallback chain that can stay inside CometAPI before reaching an official provider.
+               
+                - OpenRouter and Vercel add managed provider routing, LiteLLM emphasizes self-hosted control, and PRISMA AIRS and Cloudflare emphasize policy-heavy gateway routing.
+               
+                - The right choice depends on how much routing policy the gateway should own and how much the application should control.
+               
+                - ## Additional Hosted Gateway
+               
+                - ### APIClaw
+               
+                - **Type:** Hosted flat-rate multi-model AI API gateway with OpenAI-compatible access.
+               
+                - APIClaw provides one OpenAI-compatible API for Claude, GPT, Kimi, Qwen, DeepSeek, and GLM. It is a managed option for teams that want multi-model access without operating a proxy, with plans from $19/month and a 50-request free trial.
+               
+                - **Website:** https://apiclaw.biz
+                - 
